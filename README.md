@@ -126,7 +126,7 @@
      ```
 
 1. `pnpm add -D tailwindcss postcss autoprefixer`
-1. `pnpm exect tailwind init -p`
+1. `pnpm exec tailwind init -p`
 1. `tsconfig.json`: Replace `include` array with:
 
    - ```
@@ -155,4 +155,4 @@
      @tailwind utilities;
      ```
 
-1.
+1. Add `import './styles/global.css'` to `src/main.tsx`
