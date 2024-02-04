@@ -23,4 +23,13 @@
       + 'react/react-in-jsx-scope': 0,
       // ...
       },
-1. 
+1. `pnpm add -D prettier eslint-config-prettier eslint-plugin-prettier`
+1. `touch .prettierrc.cjs`
+1. `.prettierrc.cjs`:
+   - ```
+     + module.exports = {
+     +  trailingComma: 'es5',
+     +  tabWidth: 2,
+     +  semi: false,
+     +  singleQuote: true,
+     + }
