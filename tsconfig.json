@@ -18,8 +18,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    
+    /* Types */
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
   },
-  "include": ["src", "commitlint.config.cjs"],
+  "include": ["src", "vite.config.ts", "commitlint.config.cjs"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
