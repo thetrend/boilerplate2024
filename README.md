@@ -41,3 +41,6 @@
      + "include": ["src", "commitlint.config.cjs"],
 1. If in VS Code on a Mac: `⌘ (Cmd) + Shift + P > Developer: Reload Window`
 1. `echo "foo: message" | commitlint` to test commitlint
+1. `pnpm add -D husky`
+1. `pnpm exec husky init`
+1. `echo "pnpm exec commitlint --edit \$1" > .husky/commit-msg`
