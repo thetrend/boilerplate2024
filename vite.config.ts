@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+/// <reference types="vitest" />
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react-swc'
 
@@ -8,6 +9,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: './tests/setup.ts',
+    setupFiles: './src/tests/setup.ts',
   },
 })
