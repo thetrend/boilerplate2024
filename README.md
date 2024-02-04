@@ -44,3 +44,19 @@
 1. `pnpm add -D husky`
 1. `pnpm exec husky init`
 1. `echo "pnpm exec commitlint --edit \$1" > .husky/commit-msg`
+1. `pnpm add -D lint-staged`
+1. `.husky/pre-commit`:
+   - ```
+     - pnpm test
+     + pnpm exec lint-staged
+1. `package.json`: (Find the last `}`):
+   - ```
+     - }
+     + },
+     + "lint-staged":{
+     +   "**/*.{ts,tsx}":[
+     +     "pnpm exec prettier --write",
+     +     "pnpm exec eslint --fix"
+     +   ]
+     + }
+1. 
