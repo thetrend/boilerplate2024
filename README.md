@@ -33,3 +33,11 @@
      +  semi: false,
      +  singleQuote: true,
      + }
+1. `pnpm add -D @commitlint/{cli,config-conventional}`
+1. `echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.cjs`
+1. `tsconfig.json`:
+   - ```
+     - "include": ["src"],
+     + "include": ["src", "commitlint.config.cjs"],
+1. If in VS Code on a Mac: `⌘ (Cmd) + Shift + P > Developer: Reload Window`
+1. `echo "foo: message" | commitlint` to test commitlint
