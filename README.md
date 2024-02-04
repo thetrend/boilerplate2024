@@ -125,4 +125,34 @@
       })
      ```
 
+1. `pnpm add -D tailwindcss postcss autoprefixer`
+1. `pnpm exect tailwind init -p`
+1. `tsconfig.json`: Replace `include` array with:
+
+   - ```
+        "include": [
+           "src",
+           "vite.config.ts",
+           "postcss.config.js",
+           "tailwind.config.js",
+           "commitlint.config.cjs"
+        ],
+     ```
+
+1. `tailwind.config.js`:
+
+   - ```
+     - content: []
+     + content: ['./src/**/*.{ts,tsx}'],
+     ```
+
+1. `mkdir src/styles && touch src/styles/global.css`
+1. `src/styles/global.css`:
+
+   - ```
+     @tailwind base;
+     @tailwind components;
+     @tailwind utilities;
+     ```
+
 1.
