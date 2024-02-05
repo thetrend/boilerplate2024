@@ -20,7 +20,7 @@
       + parserOptions: {
       +   ecmaVersion: 'latest',
       +   sourceType: 'module',
-      +   project: './tsconfig.json'
+      +   project: './tsconfig.json',
       + },
       // ...
       - plugins: ['react-refresh'],
@@ -45,7 +45,7 @@
      + }
      ```
 1. `pnpm add -D @commitlint/{cli,config-conventional}`
-1. `echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.cjs`
+1. `echo "module.exports = { extends: ['@commitlint/config-conventional'] }" > commitlint.config.cjs`
 1. `tsconfig.json`:
    - ```
      - "include": ["src"],
@@ -135,7 +135,7 @@
            "vite.config.ts",
            "postcss.config.js",
            "tailwind.config.js",
-           "commitlint.config.cjs"
+           "commitlint.config.cjs",
         ],
      ```
 
@@ -156,3 +156,42 @@
      ```
 
 1. Add `import './styles/global.css'` to `src/main.tsx`
+1. Replace `src/App.tsx` with:
+
+- ```
+  import styled from 'styled-components'
+
+  const StyledP = styled.p`  color: purple;`
+
+  function App() {
+   return (
+     <>
+       <h1 className="text-3xl">Hello World!</h1>
+       <StyledP>This is a paragraph</StyledP>
+     </>
+   )
+  }
+
+  export default App
+
+  ```
+
+1. `touch src/tests/App.test.tsx`:
+
+- ```
+    import { describe, it, expect } from 'vitest'
+    import { render, screen } from '@testing-library/react'
+
+    import App from '../App'
+
+    describe('App', () => {
+    it('Should greet with "Hello World!"', () => {
+       render(<App />)
+       expect(
+          screen.getByRole('heading', {
+          level: 1,
+          })
+       ).toHaveTextContent('Hello World!')
+      })
+    })
+  ```
