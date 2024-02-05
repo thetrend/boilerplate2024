@@ -100,6 +100,7 @@
      export default defineConfig({
       plugins: [react()],
       test: {
+        globals: true,
         environment: 'happy-dom',
         setupFiles: './src/tests/setup.ts',
       },
@@ -125,7 +126,7 @@
       })
      ```
 
-1. `pnpm add -D tailwindcss postcss autoprefixer`
+1. `pnpm add -D tailwindcss postcss autoprefixer && pnpm add styled-components`
 1. `pnpm exec tailwind init -p`
 1. `tsconfig.json`: Replace `include` array with:
 
@@ -173,10 +174,9 @@
   }
 
   export default App
-
   ```
 
-1. `touch src/tests/App.test.tsx`:
+36. `touch src/tests/App.test.tsx`:
 
 - ```
     import { describe, it, expect } from 'vitest'
